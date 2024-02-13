@@ -202,7 +202,6 @@ test('Response when checking availability of goods in the warehouse if no reques
 			'Content-Type': 'application/json'
 			},
 		});
-		resultStatus = response.status;
 	} catch (error) {
 		console.error(error);
 	}
