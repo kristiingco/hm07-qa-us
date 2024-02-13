@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-undef
 const config = require('../../config');
 
-// Successful grocery item price change
-test('status should be 200', async () => {
+// Successfully changing grocery item price
+test('Successfully changing grocery item price should return a status code of 200', async () => {
 	const requestBody = {
 		"price": 175
 	}
@@ -22,7 +22,7 @@ test('status should be 200', async () => {
 	expect(resultStatus).toBe(200);
 });
 
-test('should have an ok property with value set to true', async () => {
+test('Response when successfully changing grocery item price should have an "ok" property with value set to true', async () => {
 	const requestBody = {
 		"price": 175
 	}
@@ -43,7 +43,7 @@ test('should have an ok property with value set to true', async () => {
 });
 
 // Attempting to change item price when product is not found
-test('status should be 404', async () => {
+test('Attempting to change item price when product is not found should return a status code of 404', async () => {
 	const requestBody = {
 		"price": 175
 	}
@@ -63,7 +63,7 @@ test('status should be 404', async () => {
 	expect(resultStatus).toBe(404);
 });
 
-test('should have a message property', async () => {
+test('Response when attempting to change item price when product is not found should have a "message" property', async () => {
 	const requestBody = {
 		"price": 175
 	}

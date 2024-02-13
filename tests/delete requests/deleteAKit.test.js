@@ -2,7 +2,7 @@
 const config = require('../../config');
 
 // Successful deletion of kit
-test('status should be 200', async () => {
+test('Successfully deleting a kit should return a status code of 200', async () => {
 	let resultStatus;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/1`, {
@@ -15,7 +15,7 @@ test('status should be 200', async () => {
 	expect(resultStatus).toBe(200);
 });
 
-test('response should have an ok property set to true', async () => {
+test('Successfully deleting a kit should return a response with an "ok" property set to true', async () => {
 	let response;
     try {
 		response = await fetch(`${config.API_URL}/api/v1/kits/1`, {
@@ -28,8 +28,8 @@ test('response should have an ok property set to true', async () => {
 	expect(data).toHaveProperty("ok", true);
 });
 
-// Deleting a kit when the id of kit does not exist
-test('status should be 404', async () => {
+// Deleting a kit when the provided id does not exist
+test('Deleting a kit when the provided id does not exist should return a status code of 404', async () => {
 	let resultStatus;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/60`, {
@@ -42,7 +42,7 @@ test('status should be 404', async () => {
 	expect(resultStatus).toBe(404);
 });
 
-test('response should have a message property', async () => {
+test('Deleting a kit when the provided id does not exist should return a response that has a "message" property', async () => {
 	let response;
     try {
 		response = await fetch(`${config.API_URL}/api/v1/kits/60`, {

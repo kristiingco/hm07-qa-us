@@ -2,7 +2,7 @@
 const config = require('../../config');
 
 // Successfully creating a user account
-test('status code should be 201', async () => {
+test('Successfully creating a user account code should return a status code of 201', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -26,7 +26,7 @@ test('status code should be 201', async () => {
 	expect(resultStatus).toBe(201);
 });
 
-test('response should not be an empty object (should be truthy)', async () => {
+test('Response when successfully creating a user account should not be an empty object (aka should be truthy, having properties)', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -50,7 +50,7 @@ test('response should not be an empty object (should be truthy)', async () => {
 	expect(data).toBeTruthy();
 });
 
-test('response should have authToken as a property', async () => {
+test('Response when successfully creating a user account should have "authToken" as a property', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -75,7 +75,7 @@ test('response should have authToken as a property', async () => {
 });
 
 // Creating a user account when firstName is not passed
-test('status code should be 400', async () => {
+test('Creating a user account when firstName is not passed should return a status code of 400', async () => {
 	const requestBody = {
 		"email": "max@example.com",
 		"phone": "+10005553535",
@@ -98,7 +98,7 @@ test('status code should be 400', async () => {
 	expect(resultStatus).toBe(400);
 });
 
-test('message with correct value should be in response', async () => {
+test('Response when creating a user account when firstName is not passed should have a "message" property with correct value', async () => {
 	const requestBody = {
 		"email": "max@example.com",
 		"phone": "+10005553535",
@@ -122,7 +122,7 @@ test('message with correct value should be in response', async () => {
 });
 
 // Creating a user account when phone number is not passed
-test('status code should be 400', async () => {
+test('Creating a user account when phone number is not passed returns a status code of 400', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -145,7 +145,7 @@ test('status code should be 400', async () => {
 	expect(resultStatus).toBe(400);
 });
 
-test('message with correct value should be in response', async () => {
+test('Response when creating a user account when phone number is not passed should have a "message" property with correct valu', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -169,7 +169,7 @@ test('message with correct value should be in response', async () => {
 });
 
 // Creating a user account when address is not passed
-test('status code should be 400', async () => {
+test('Creating a user account when address is not passed returns a status code of 400', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -192,7 +192,7 @@ test('status code should be 400', async () => {
 	expect(resultStatus).toBe(400);
 });
 
-test('message with correct value should be in response', async () => {
+test('Response when creating a user account when address is not passed should have a "message" property with correct value', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -216,7 +216,7 @@ test('message with correct value should be in response', async () => {
 });
 
 // Creating a user account when username is invalid
-test('status code should be 400', async () => {
+test('Creating a user account when username is invalid returns a status code of 400', async () => {
 	const requestBody = {
 		"firstName": "M",
 		"email": "max@example.com",
@@ -240,7 +240,7 @@ test('status code should be 400', async () => {
 	expect(resultStatus).toBe(400);
 });
 
-test('message with correct value should be in response', async () => {
+test('Response when creating a user account when username is invalid should have a "message" property with correct value', async () => {
 	const requestBody = {
 		"firstName": "M",
 		"email": "max@example.com",
@@ -265,7 +265,7 @@ test('message with correct value should be in response', async () => {
 });
 
 // Creating a user account when phone number is invalid
-test('status code should be 400', async () => {
+test('Creating a user account when phone number is invalid returns a status code of 400', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -289,7 +289,7 @@ test('status code should be 400', async () => {
 	expect(resultStatus).toBe(400);
 });
 
-test('message with correct value should be in response', async () => {
+test('Response when creating a user account when phone number is invalid should have a "message" property with correct value', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -314,7 +314,7 @@ test('message with correct value should be in response', async () => {
 });
 
 // Creating a user account when address is invalid
-test('status code should be 400', async () => {
+test('Creating a user account when address is invalid returns a status code of 400', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
@@ -338,7 +338,7 @@ test('status code should be 400', async () => {
 	expect(resultStatus).toBe(400);
 });
 
-test('message with correct value should be in response', async () => {
+test('Response when creating a user account when address is invalid should have a "message" property with correct value', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",

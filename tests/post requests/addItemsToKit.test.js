@@ -2,7 +2,7 @@
 const config = require('../../config');
 
 // Succesfully adding items to the kit 
-test('status code should be 200', async () => {
+test('Succesfully adding items to the kit should return a status code of 200', async () => {
 	const requestBody = {
 		"productsList": [
 			{
@@ -31,7 +31,7 @@ test('status code should be 200', async () => {
 	expect(resultStatus).toBe(200);
 });
 
-test('response should not be empty (should be truthy)', async () => {
+test('Successfully adding items to the kit should not result in an empty object (aka response object be truthy, containing properties)', async () => {
 	const requestBody = {
 		"productsList": [
 			{
@@ -60,7 +60,7 @@ test('response should not be empty (should be truthy)', async () => {
 	expect(data).toBeTruthy();
 });
 
-test('response should have the id property', async () => {
+test('Response when successfully adding items to the kit should have the "id" property', async () => {
 	const requestBody = {
 		"productsList": [
 			{
@@ -89,7 +89,7 @@ test('response should have the id property', async () => {
 	expect(data).toHaveProperty("id");
 });
 
-test('response should have the name property', async () => {
+test('Response when successfully adding items to the kit should have the "name" property', async () => {
 	const requestBody = {
 		"productsList": [
 			{
@@ -118,7 +118,7 @@ test('response should have the name property', async () => {
 	expect(data).toHaveProperty("name");
 });
 
-test('response should have the productsList property', async () => {
+test('Response when successfully adding items to the kit should have the "productsList" property', async () => {
 	const requestBody = {
 		"productsList": [
 			{
@@ -147,7 +147,7 @@ test('response should have the productsList property', async () => {
 	expect(data).toHaveProperty("productsList");
 });
 
-test('response should have the productsCount property', async () => {
+test('Response when successfully adding items to the kit should have the "productsCount" property', async () => {
 	const requestBody = {
 		"productsList": [
 			{
@@ -177,7 +177,7 @@ test('response should have the productsCount property', async () => {
 });
 
 // Adding items to the kit when kit does not exist 
-test('status code should be 404', async () => {
+test('Adding items to the kit when kit with provided id does not exist should return a status code of 404', async () => {
 	const requestBody = {
 		"productsList": [
 			{
@@ -206,7 +206,7 @@ test('status code should be 404', async () => {
 	expect(resultStatus).toBe(404);
 });
 
-test('response should have the message property', async () => {
+test('Response when adding items to the kit when kit with provided id does not exist should have the "message" property', async () => {
 	const requestBody = {
 		"productsList": [
 			{

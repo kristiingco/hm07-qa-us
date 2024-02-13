@@ -2,7 +2,7 @@
 const config = require('../../config');
 
 // Successfully checking the quantity of goods in warehouse 
-test('status code should be 200', async () => {
+test('Successfully checking the quantity of goods in warehouse should return a status code of 200', async () => {
 	const requestBody = {
 		"ids": [
 			1,
@@ -26,7 +26,7 @@ test('status code should be 200', async () => {
 	expect(resultStatus).toBe(200);
 });
 
-test('response should not be empty (should be truthy)', async () => {
+test('Response when successfully checking the quantity of goods in warehouse should not be empty (aka should be truthy, having properties)', async () => {
 	const requestBody = {
 		"ids": [
 			1,
@@ -50,7 +50,7 @@ test('response should not be empty (should be truthy)', async () => {
 	expect(data).toBeTruthy();
 });
 
-test('response should have the Everything You Need property', async () => {
+test('Response when successfully checking the quantity of goods in warehouse should have the "Everything You Need" property', async () => {
 	const requestBody = {
 		"ids": [
 			1,
@@ -74,7 +74,7 @@ test('response should have the Everything You Need property', async () => {
 	expect(data).toHaveProperty("Everything You Need");
 });
 
-test('response should have the Food City property', async () => {
+test('Response when successfully checking the quantity of goods in warehouse should have the "Food City" property', async () => {
 	const requestBody = {
 		"ids": [
 			1,
@@ -98,7 +98,7 @@ test('response should have the Food City property', async () => {
 	expect(data).toHaveProperty("Food City");
 });
 
-test('response should have the Big World property', async () => {
+test('Response when successfully checking the quantity of goods in warehouse should have the "Big World" property', async () => {
 	const requestBody = {
 		"ids": [
 			1,
@@ -122,7 +122,7 @@ test('response should have the Big World property', async () => {
 	expect(data).toHaveProperty("Big World");
 });
 
-test('response should have the Fresh Food property', async () => {
+test('Response when successfully checking the quantity of goods in warehouse should have the "Fresh Food" property', async () => {
 	const requestBody = {
 		"ids": [
 			1,
@@ -146,8 +146,8 @@ test('response should have the Fresh Food property', async () => {
 	expect(data).toHaveProperty("Fresh Food");
 });
 
-// Check the quantity of goods in warehouse when product id does not exist 
-test('status code should be 404', async () => {
+// Checking the quantity of goods in warehouse when product id does not exist 
+test('Checking the quantity of goods in warehouse when product id does not exist should return a status code of 404', async () => {
 	const requestBody = {
 		"ids": [
 			220
@@ -169,7 +169,7 @@ test('status code should be 404', async () => {
 	expect(resultStatus).toBe(404);
 });
 
-test('response should have a message as a property', async () => {
+test('Response when checking the quantity of goods in warehouse when product id does not exist should have "message" as a property', async () => {
 	const requestBody = {
 		"ids": [
 			220
@@ -191,8 +191,8 @@ test('response should have a message as a property', async () => {
 	expect(data).toHaveProperty("message");
 });
 
-// Check the quantity of goods in warehouse if request body is not passed 
-test('status code should be 404', async () => {
+// Checking the quantity of goods in warehouse if request body is not passed 
+test('Checking the quantity of goods in warehouse if request body is not passed should return a status code of 404', async () => {
 	let resultStatus;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/warehouses/amount`, {
@@ -208,7 +208,7 @@ test('status code should be 404', async () => {
 	expect(resultStatus).toBe(400);
 });
 
-test('response should have a message as a property', async () => {
+test('Response when checking the quantity of goods in warehouse if request body is not passed should have "message" as a property', async () => {
 	let response;
     try {
 		response = await fetch(`${config.API_URL}/api/v1/warehouses/amount`, {

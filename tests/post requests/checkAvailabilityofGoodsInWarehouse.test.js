@@ -2,7 +2,7 @@
 const config = require('../../config');
 
 // Successfully checking availability of goods in the warehouse 
-test('status code should be 200', async () => {
+test('Successfully checking availability of goods in the warehouse returns a status code of 200', async () => {
 	const requestBody = {
 		"products": [
 			{
@@ -31,7 +31,7 @@ test('status code should be 200', async () => {
 	expect(resultStatus).toBe(200);
 });
 
-test('response should not be empty (should be truthy)', async () => {
+test('Successfully checking availability of goods in the warehouse should have a response that is not empty (aka should be truthy, having properties)', async () => {
 	const requestBody = {
 		"products": [
 			{
@@ -60,7 +60,7 @@ test('response should not be empty (should be truthy)', async () => {
 	expect(data).toBeTruthy();
 });
 
-test('response should have the Everything You Need property', async () => {
+test('Response when successfully checking availability of goods in the warehouse should have the "Everything You Need" property', async () => {
 	const requestBody = {
 		"products": [
 			{
@@ -89,7 +89,7 @@ test('response should have the Everything You Need property', async () => {
 	expect(data).toHaveProperty("Everything You Need");
 });
 
-test('response should have the Food City property', async () => {
+test('Response when successfully checking availability of goods in the warehouse should have the "Food City" property', async () => {
 	const requestBody = {
 		"products": [
 			{
@@ -118,7 +118,7 @@ test('response should have the Food City property', async () => {
 	expect(data).toHaveProperty("Food City");
 });
 
-test('response should have the Big World property', async () => {
+test('Response when successfully checking availability of goods in the warehouse should have the "Big World" property', async () => {
 	const requestBody = {
 		"products": [
 			{
@@ -147,7 +147,7 @@ test('response should have the Big World property', async () => {
 	expect(data).toHaveProperty("Big World");
 });
 
-test('response should have the Fresh Food property', async () => {
+test('Response when successfully checking availability of goods in the warehouse should have the "Fresh Food" property', async () => {
 	const requestBody = {
 		"products": [
 			{
@@ -177,7 +177,7 @@ test('response should have the Fresh Food property', async () => {
 });
 
 // Checking availability of goods in the warehouse if no request body/empty request body is passed
-test('status code should be 400', async () => {
+test('Checking availability of goods in the warehouse if no request body/empty request body is passed should return a status code of 400', async () => {
 	let resultStatus;
     try {
 		const response = await fetch(`${config.API_URL}/api/v1/warehouses/check`, {
@@ -193,7 +193,7 @@ test('status code should be 400', async () => {
 	expect(resultStatus).toBe(400);
 });
 
-test('response should have a message property', async () => {
+test('Response when checking availability of goods in the warehouse if no request body/empty request body is passed should have a "message" property', async () => {
 	let response;
     try {
 		response = await fetch(`${config.API_URL}/api/v1/warehouses/check`, {

@@ -1,8 +1,8 @@
 // eslint-disable-next-line no-undef
 const config = require('../../config');
 
-// Successfully receive set 
-test('status should be 200', async () => {
+// Successfully receive a kit 
+test('Successfully fetching a kit should return a status code of 200', async () => {
 	let resultStatus;
 	try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
@@ -13,7 +13,7 @@ test('status should be 200', async () => {
 	expect(resultStatus).toBe(200);
 });
 
-test('result of finding kit should be truthy (aka response object should have properties)', async () => {
+test('Successfully fetching a kit should return a truthy object (aka response object should have properties)', async () => {
 	let response;
 	try {
 		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
@@ -24,7 +24,7 @@ test('result of finding kit should be truthy (aka response object should have pr
 	expect(data).toBeTruthy();
 });
 
-test('result of finding kit should not be null', async () => {
+test('Successfully fetching a kit should not return null', async () => {
 	let response;
 	try {
 		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
@@ -35,7 +35,7 @@ test('result of finding kit should not be null', async () => {
 	expect(data).not.toBeNull();
 });
 
-test('response should include id property', async () => {
+test('Response of fetching a kit should include "id" property', async () => {
 	let response;
 	try {
 		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
@@ -46,7 +46,7 @@ test('response should include id property', async () => {
 	expect(data).toHaveProperty("id");
 });
 
-test('response should include name property', async () => {
+test('Response of fetching a kit should include "name" property', async () => {
 	let response;
 	try {
 		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
@@ -57,7 +57,7 @@ test('response should include name property', async () => {
 	expect(data).toHaveProperty("name");
 });
 
-test('response should include productsList property', async () => {
+test('Response of fetching a kit should include "productsList" property', async () => {
 	let response;
 	try {
 		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
@@ -68,7 +68,7 @@ test('response should include productsList property', async () => {
 	expect(data).toHaveProperty("productsList");
 });
 
-test('response should include productsCount property', async () => {
+test('Response of fetching a kit should include "productsCount" property', async () => {
 	let response;
 	try {
 		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
@@ -80,7 +80,7 @@ test('response should include productsCount property', async () => {
 });
 
 // Kit name not found 
-test('status should be 404', async () => {
+test('Not finding a kit with the provided name should return a status code of 404', async () => {
 	let resultStatus;
 	try {
 		const response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Japanese%20Treats`);
@@ -91,7 +91,7 @@ test('status should be 404', async () => {
 	expect(resultStatus).toBe(404);
 });
 
-test('error response should have a message property', async () => {
+test('Not finding a kit with the provided name should return an error response with a "message" property', async () => {
 	let response;
 	try {
 		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Japanese%20Treats`);
