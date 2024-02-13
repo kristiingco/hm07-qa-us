@@ -105,6 +105,50 @@ test('result of finding kit should not be null', async () => {
 	expect(data).not.toBeNull();
 });
 
+test('response should include id property', async () => {
+	let response;
+	try {
+		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
+	} catch (error) {
+		console.error(error);
+	}
+	const data = await response.json();
+	expect(data).toHaveProperty("id");
+});
+
+test('response should include name property', async () => {
+	let response;
+	try {
+		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
+	} catch (error) {
+		console.error(error);
+	}
+	const data = await response.json();
+	expect(data).toHaveProperty("name");
+});
+
+test('response should include productsList property', async () => {
+	let response;
+	try {
+		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
+	} catch (error) {
+		console.error(error);
+	}
+	const data = await response.json();
+	expect(data).toHaveProperty("productsList");
+});
+
+test('response should include productsCount property', async () => {
+	let response;
+	try {
+		response = await fetch(`${config.API_URL}/api/v1/kits/search?name=Tastes%20of%20Paris`);
+	} catch (error) {
+		console.error(error);
+	}
+	const data = await response.json();
+	expect(data).toHaveProperty("productsCount");
+});
+
 // Getting a kit by name (not found)  
 test('status should be 404', async () => {
 	let resultStatus;
@@ -125,5 +169,5 @@ test('error response should have a message property', async () => {
 		console.error(error);
 	}
 	const data = await response.json();
-	expect(data).toHaveProperty("message");
+	expect(data).toHaveProperty("message", "Not found");
 });
