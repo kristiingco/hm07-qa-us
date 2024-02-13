@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-undef
-const config = require('../config');
+const config = require('../../config');
 
-// Deleting a kit (successful)
+// Successful deletion of kit
 test('status should be 200', async () => {
 	let resultStatus;
     try {
@@ -28,7 +28,7 @@ test('response should have an ok property set to true', async () => {
 	expect(data).toHaveProperty("ok", true);
 });
 
-//Deleting a kit (when id kit does not exist) 
+// Deleting a kit when the id of kit does not exist
 test('status should be 404', async () => {
 	let resultStatus;
     try {
