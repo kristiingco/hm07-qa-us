@@ -439,7 +439,7 @@ test('status code should be 201', async () => {
 		"firstName": "Max",
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let resultStatus;
@@ -455,7 +455,7 @@ test('status code should be 201', async () => {
 	} catch (error) {
 		console.error(error);
 	}
-	expect(resultStatus).toBe(200);
+	expect(resultStatus).toBe(201);
 });
 
 test('response should not be an empty object (should be truthy)', async () => {
@@ -463,7 +463,7 @@ test('response should not be an empty object (should be truthy)', async () => {
 		"firstName": "Max",
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let response;
@@ -487,7 +487,7 @@ test('response should have authToken as a property', async () => {
 		"firstName": "Max",
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let response;
@@ -511,7 +511,7 @@ test('status code should be 400', async () => {
 	const requestBody = {
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let resultStatus;
@@ -534,7 +534,7 @@ test('message with correct value should be in response', async () => {
 	const requestBody = {
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let response;
@@ -558,7 +558,7 @@ test('status code should be 400', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let resultStatus;
@@ -581,7 +581,7 @@ test('message with correct value should be in response', async () => {
 	const requestBody = {
 		"firstName": "Max",
 		"email": "max@example.com",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let response;
@@ -606,7 +606,7 @@ test('status code should be 400', async () => {
 		"firstName": "Max",
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence"
+		"comment": "The baby is sleeping"
 	}
 	let resultStatus;
     try {
@@ -629,7 +629,7 @@ test('message with correct value should be in response', async () => {
 		"firstName": "Max",
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence"
+		"comment": "The baby is sleeping"
 	}
 	let response;
     try {
@@ -653,7 +653,7 @@ test('status code should be 400', async () => {
 		"firstName": "M",
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let resultStatus;
@@ -677,7 +677,7 @@ test('message with correct value should be in response', async () => {
 		"firstName": "M",
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let response;
@@ -702,7 +702,7 @@ test('status code should be 400', async () => {
 		"firstName": "Max",
 		"email": "max@example.com",
 		"phone": "hello",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let resultStatus;
@@ -726,7 +726,7 @@ test('message with correct value should be in response', async () => {
 		"firstName": "Max",
 		"email": "max@example.com",
 		"phone": "hello",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8042 Lancaster Ave.Hamburg, NY"
 	}
 	let response;
@@ -751,7 +751,7 @@ test('status code should be 400', async () => {
 		"firstName": "Max",
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8"
 	}
 	let resultStatus;
@@ -775,7 +775,7 @@ test('message with correct value should be in response', async () => {
 		"firstName": "Max",
 		"email": "max@example.com",
 		"phone": "+10005553535",
-		"comment": "The baby is sleeping, keep silence",
+		"comment": "The baby is sleeping",
 		"address": "8"
 	}
 	let response;
