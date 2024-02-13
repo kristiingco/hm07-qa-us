@@ -1025,5 +1025,5 @@ test('response should have the message property', async () => {
 		console.error(error);
 	}
 	const data = await response.json(); 
-	expect(data).toHaveProperty("message", "Not found");
+	expect(data).toHaveProperty("message", "Not Found");
 });
